@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080b14">
+
+    <title>NEBULA | Personal Command Center</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+        <div class="ambient-glow glow-one"></div>
+        <div class="ambient-glow glow-two"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+
+        <!-- TOP NAVIGATION -->
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-title">
+                    <span class="brand-symbol">✦</span>
+                    <span>NEBULA</span>
+                </div>
+            </div>
+
+            <div class="header-clock">
+                <div class="clock" id="clock">00:00:00</div>
+                <div class="date" id="date">MONDAY, JANUARY 01</div>
+            </div>
+
+            <section class="brand-weather" id="weatherCapsule">
+                <span id="weatherIcon">☀</span>
+                <span id="weatherTemperature">--°</span>
+                <span class="weather-divider"></span>
+                <span id="weatherCondition">Loading weather</span>
+                <span id="weatherLocation">Detecting...</span>
+            </section>
+        </header>
+
+        <!-- OPEN TABS STRIP -->
+        <section class="recent-tabs" id="recentTabsBar">
+            <div class="recent-tabs-heading">
+                <span class="recent-tabs-indicator"></span>
+                OPEN TABS
+            </div>
+
+            <div class="recent-tabs-list" id="recentTabsList">
+                <span class="recent-tabs-empty">Loading tabs...</span>
+            </div>
+        </section>
+
+        <!-- YOUTUBE MUSIC COMMAND CENTER -->
+        <section class="music-center">
+            <div class="music-track">
+                <div class="music-artwork" id="musicArtwork">
+                    <span>♫</span>
+                </div>
+
+                <div class="music-track-info">
+                    <span class="music-status" id="musicStatus">
+                        WAITING FOR MUSIC
+                    </span>
+
+                    <h2 id="musicTitle">No song playing</h2>
+                    <p id="musicArtist">Open YouTube Music to begin</p>
+                </div>
+            </div>
+
+            <div class="music-controls">
+                <button id="musicPrevious" title="Previous track">|◀</button>
+                <button id="musicPlayPause" class="music-play-button"
+                    title="Play or pause">▶</button>
+                <button id="musicNext" title="Next track">▶|</button>
+            </div>
+
+            <div class="music-timeline">
+                <span id="musicCurrentTime">0:00</span>
+
+                <input
+                    type="range"
+                    id="musicProgress"
+                    min="0"
+                    max="100"
+                    value="0"
+                >
+
+                <span id="musicDuration">0:00</span>
+            </div>
+        </section>
+
+        <!-- PLAYING NEXT -->
+        <div class="music-up-next">
+            <div class="up-next-artwork" id="nextArtwork">♫</div>
+
+            <div class="up-next-info">
+                <span>PLAYING NEXT</span>
+                <strong id="nextTitle">Waiting for queue</strong>
+                <small id="nextArtist">YouTube Music</small>
+            </div>
+        </div>
+
+        <!-- MAIN SEARCH -->
+        <section class="search-section">
+            <form id="searchForm">
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search the universe..."
+                    autocomplete="off"
+                >
+
+                <button type="submit">ENTER ↗</button>
+            </form>
+        </section>
+
+        <!-- LEFT QUICK ACCESS DOCK -->
+        <aside class="quick-dock">
+            <a href="https://www.google.com" target="_blank" class="quick-app">
+                <img class="quick-icon" src="https://www.google.com/s2/favicons?domain=google.com&sz=128" alt="Google">
+                <span>Google</span>
+            </a>
+
+            <a href="https://www.youtube.com" target="_blank" class="quick-app">
+                <img class="quick-icon" src="https://www.google.com/s2/favicons?domain=youtube.com&sz=128" alt="YouTube">
+                <span>YouTube</span>
+            </a>
+
+            <a href="https://music.youtube.com" target="_blank" class="quick-app">
+                <img class="quick-icon" src="https://www.google.com/s2/favicons?domain=music.youtube.com&sz=128" alt="YouTube Music">
+                <span>Music</span>
+            </a>
+
+            <a href="https://github.com" target="_blank" class="quick-app">
+                <img class="quick-icon" src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="GitHub">
+                <span>GitHub</span>
+            </a>
+
+            <a href="https://chatgpt.com" target="_blank" class="quick-app">
+                <img class="quick-icon" src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128" alt="ChatGPT">
+                <span>ChatGPT</span>
+            </a>
+        </aside>
+
+        <!-- GOOGLE APPS QUICK ACCESS -->
+        <aside class="google-dock">
+            <div class="dock-heading">GOOGLE APPS</div>
+
+            <a href="https://mail.google.com/" target="_blank" class="dock-app">
+                <img class="app-icon" src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" alt="Gmail">
+                <span>Gmail</span>
+            </a>
+
+            <a href="https://drive.google.com/" target="_blank" class="dock-app">
+                <img class="app-icon" src="https://ssl.gstatic.com/images/branding/product/2x/drive_2020q4_48dp.png" alt="Drive">
+                <span>Drive</span>
+            </a>
+
+            <a href="https://calendar.google.com/" target="_blank" class="dock-app">
+                <img class="app-icon" src="https://calendar.google.com/googlecalendar/images/favicons_2020q4/calendar_31.ico" alt="Calendar">
+                <span>Calendar</span>
+            </a>
+
+            <a href="https://docs.google.com/" target="_blank" class="dock-app">
+                <img class="app-icon" src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_document_x32.png" alt="Docs">
+                <span>Docs</span>
+            </a>
+
+            <a href="https://sheets.google.com/" target="_blank" class="dock-app">
+                <img class="app-icon" src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_spreadsheet_x32.png" alt="Sheets">
+                <span>Sheets</span>
+            </a>
+
+            <a href="https://slides.google.com/" target="_blank" class="dock-app">
+                <img class="app-icon" src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_presentation_x32.png" alt="Slides">
+                <span>Slides</span>
+            </a>
+
+            <a href="https://keep.google.com/" target="_blank" class="dock-app">
+                <img class="app-icon" src="https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png" alt="Keep">
+                <span>Keep</span>
+            </a>
+
+            <a href="https://maps.google.com/" target="_blank" class="dock-app">
+                <img class="app-icon" src="https://www.google.com/s2/favicons?domain=maps.google.com&sz=128" alt="Maps">
+                <span>Maps</span>
+            </a>
+
+            <a href="https://meet.google.com/" target="_blank" class="dock-app">
+                <img class="app-icon" src="https://www.google.com/s2/favicons?domain=meet.google.com&sz=128" alt="Meet">
+                <span>Meet</span>
+            </a>
+
+            <a href="https://translate.google.com/" target="_blank" class="dock-app">
+                <img class="app-icon" src="https://www.google.com/s2/favicons?domain=translate.google.com&sz=128" alt="Translate">
+                <span>Translate</span>
+            </a>
+        </aside>
+
+    </main>
+
+    <!-- LEFT EDGE NOTES TRIGGER -->
+    <div
+        class="notes-edge-trigger"
+        id="notesEdgeTrigger"
+        aria-label="Open notes">
+    </div>
+
+    <!-- NOTES WORKSPACE -->
+    <section
+        class="notes-page"
+        id="notesPage"
+        aria-label="Notes workspace"
+        aria-hidden="true">
+
+        <header class="notes-topbar">
+
+            <button class="notes-back-button" id="notesBack"
+                aria-label="Return to dashboard">
+                <span>←</span>
+                <span>NEBULA</span>
+            </button>
+
+            <div class="notes-brand">
+                <span class="brand-symbol">✦</span>
+                <span>NOTES</span>
+            </div>
+
+            <span class="notes-save-status" id="notesSaveStatus">
+                ALL CHANGES SAVED
+            </span>
+
+        </header>
+
+        <main class="notes-workspace">
+
+            <!-- NOTES HEADING -->
+            <div class="notes-heading">
+                <div>
+                    <span class="notes-eyebrow">YOUR PERSONAL SPACE</span>
+                    <h1>Thoughts & Ideas.</h1>
+                    <p>A quiet place for everything on your mind.</p>
+                </div>
+
+                <button class="notes-new-button" id="notesNew">
+                    <span>＋</span>
+                    New Note
+                </button>
+            </div>
+
+            <!-- NOTES GRID -->
+            <div class="notes-grid" id="notesGrid">
+                <!-- Note cards generated by JavaScript -->
+            </div>
+
+            <!-- EMPTY STATE -->
+            <div class="notes-empty-state" id="notesEmptyState">
+                <span class="notes-empty-icon">✦</span>
+                <h2>Your space is still empty.</h2>
+                <p>Create your first note and let your thoughts find a place.</p>
+                <button id="notesEmptyCreate">Create your first note ↗</button>
+            </div>
+
+        </main>
+
+        <!-- NOTE EDITOR -->
+        <div class="notes-editor-overlay" id="notesEditorOverlay"
+            aria-hidden="true">
+
+            <section class="notes-editor-modal"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Edit note">
+
+                <header class="notes-editor-header">
+
+                    <button class="notes-editor-back" id="notesEditorBack">
+                        ← <span>All notes</span>
+                    </button>
+
+                    <div class="notes-editor-actions">
+                        <span id="notesEditorStatus">SAVED</span>
+
+                        <button id="notesDelete" class="notes-delete-button"
+                            title="Delete note">⌫</button>
+                    </div>
+
+                </header>
+
+                <div class="notes-editor-content">
+
+                    <input
+                        type="text"
+                        id="notesTitle"
+                        class="notes-title-input"
+                        placeholder="Untitled note"
+                        autocomplete="off"
+                    >
+
+                    <textarea
+                        id="notesContent"
+                        class="notes-content-input"
+                        placeholder="Start writing..."
+                        spellcheck="true"
+                    ></textarea>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </section>
+
+    <!-- CALENDAR EDGE TRIGGER -->
+    <div
+        class="calendar-edge-trigger"
+        id="calendarEdgeTrigger"
+        aria-label="Open calendar">
+    </div>
+
+    <!-- CALENDAR OVERLAY -->
+    <div class="calendar-overlay" id="calendarOverlay"></div>
+
+    <!-- RIGHT-SIDE CALENDAR PANEL -->
+    <aside class="calendar-panel" id="calendarPanel"
+        aria-label="Monthly calendar">
+
+        <div class="calendar-header">
+            <div>
+                <span class="calendar-eyebrow">NEBULA PLANNER</span>
+                <h2>Calendar</h2>
+            </div>
+
+            <button class="calendar-close" id="calendarClose"
+                aria-label="Close calendar">✕</button>
+        </div>
+
+        <!-- MONTH NAVIGATION -->
+        <div class="calendar-month-navigation">
+            <button id="calendarPrevMonth" aria-label="Previous month">‹</button>
+            <h3 id="calendarMonthYear">November 2026</h3>
+            <button id="calendarNextMonth" aria-label="Next month">›</button>
+        </div>
+
+        <!-- CALENDAR GRID -->
+        <div class="calendar-weekdays">
+            <span>MON</span>
+            <span>TUE</span>
+            <span>WED</span>
+            <span>THU</span>
+            <span>FRI</span>
+            <span>SAT</span>
+            <span>SUN</span>
+        </div>
+
+        <div class="calendar-grid" id="calendarGrid"></div>
+
+        <!-- CALENDAR LEGEND -->
+        <div class="calendar-legend">
+            <div>
+                <span class="legend-dot today-dot"></span>
+                <span>Today</span>
+            </div>
+
+            <div>
+                <span class="legend-dot holiday-dot"></span>
+                <span>Public holiday</span>
+            </div>
+
+            <div>
+                <span class="legend-dot selected-dot"></span>
+                <span>Selected</span>
+            </div>
+        </div>
+
+        <!-- SELECTED DATE DETAILS -->
+        <section class="calendar-details" id="calendarDetails">
+            <span class="calendar-details-label">SELECTED DATE</span>
+            <h3 id="selectedDateTitle">Select a date</h3>
+            <p id="selectedDateDescription">
+                Choose a day to see its details and holidays.
+            </p>
+        </section>
+
+        <!-- INDIA HOLIDAYS -->
+        <div class="calendar-holiday-section">
+            <div class="calendar-holiday-heading">
+                <span>INDIA</span>
+                <span>PUBLIC HOLIDAYS</span>
+            </div>
+
+            <div id="calendarHolidayList"></div>
+        </div>
+
+    </aside>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+{
+  "manifest_version": 3,
+  "name": "NEBULA - Personal Command Center",
+  "version": "1.1.0",
+  "description": "A minimal futuristic personal dashboard for Chrome.",
+
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+
+  "permissions": [
+    "storage",
+    "tabs",
+    "sessions"
+  ],
+
+  "host_permissions": [
+    "https://api.open-meteo.com/*",
+    "https://api.bigdatacloud.net/*",
+    "https://api.holibase.org/*",
+    "https://music.youtube.com/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://music.youtube.com/*"
+      ],
+      "js": [
+        "music-page-bridge.js"
+      ],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://music.youtube.com/*"
+      ],
+      "js": [
+        "music-controller.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
