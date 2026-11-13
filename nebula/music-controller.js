@@ -2,7 +2,7 @@
 // NEBULA — YouTube Music Controller
 
 function getPlayerState() {
-    const trackInfo = document.querySelector("ytmusic-miniplayer");
+    const trackInfo = document.querySelector("ytmusic-player-bar");
     const video = document.querySelector("video.html5-main-video");
 
     if (!trackInfo) {
